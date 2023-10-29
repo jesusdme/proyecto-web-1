@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Piso view</title>
+</head>
+
+<body>
+    <h1>Piso view</h1>
+    <li>
+        <p>
+            <a th:href="@{/piso/edit/{ID_Piso}(ID_Piso=${piso.ID_Piso})}">Editar Piso</a>
+        </p>
+
+        <p>
+            <a th:href="@{/piso/delete/{ID_Piso}(ID_Piso=${piso.ID_Piso})}">Eliminar piso</a>
+        </p>
+    </li>
+
+    <p>Piso:</p>
+    <p th:text="${piso.ID_Piso}"></p>
+
+    <p>Capacidad Máxima:</p>
+    <p th:text="${piso.capacidadMax}"></p>
+
+    <p>Tipo de Vehiculo:</p>
+    <p th:text="${piso.tipoVehiculo}"></p>
+
+    <p>Disponible:</p>
+    <p th:text="${piso.disponible}"></p>
+
+    <h2>Vehículos en este piso:</h2>
+    <ul>
+        <li th:each="vehiculo : ${piso.vehiculos}">
+            <p th:text="|Placa: ${vehiculo.placa}|"></p>
+            <p th:text="|Tipo de Vehiculo: ${vehiculo.tipoV}|"></p>
+            <p th:text="|Tarifa: ${vehiculo.tarifa}|"></p>
+            <p th:text="|Minutos: ${vehiculo.minutos}|"></p>
+        </li>
+    </ul>
+
+    <a th:href="@{/piso/list}">Volver</a>
+
+
+</body>
+
+</html>

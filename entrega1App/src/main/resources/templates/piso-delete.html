@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación de Piso</title>
+</head>
+<body>
+    <h1>Confirmar Eliminación de Piso</h1>
+    <p>¿Estás seguro de que deseas eliminar el siguiente piso?</p>
+    
+    <h3>Información del Piso:</h3>
+    <p>ID: ${piso.ID_Piso}</p>
+    <p>Capacidad Máxima: ${piso.capacidadMax}</p>
+    <p>Tipo de Vehículo: ${piso.tipoVehiculo}</p>
+    
+    <form method="post" action="/piso/delete/${piso.ID_Piso}">
+        <!-- Utiliza el método POST para enviar la solicitud de eliminación -->
+        <button type="submit">Eliminar</button>
+        <a href="/piso/list">Cancelar</a>
+    </form>
+</body>
+</html>

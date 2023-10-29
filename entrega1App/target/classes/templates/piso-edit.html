@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Piso</title>
+</head>
+<body>
+    <h1>Edit Piso</h1>
+
+    <form th:action="@{/piso/save}" method="post">
+        <input type="hidden" name="id" th:field="${piso.ID_Piso}">
+        
+        <label for="txtCapacidadMax">Capacidad Máxima:</label>
+        <input type="number" name="capacidadMax" id="txtCapacidadMax" required th:attr="min=${minimo}" th:field="${piso.capacidadMax}">
+        
+        <label for="selectTipoVehiculo">Tipo de Vehículo:</label>
+        <select name="tipoVehiculo" id="selectTipoVehiculo" th:field="${piso.tipoVehiculo}">
+            <option value="moto">moto</option>
+            <option value="bus">bus</option>
+            <option value="automovil">automovil</option>
+        </select>
+
+        <button>Enviar</button>
+    </form>
+</body>
+</html>

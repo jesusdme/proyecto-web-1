@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehiculo view</title>
+</head>
+<body>
+    <h1>Vehiculo view</h1>
+
+    <p>Placa:</p>
+    <p th:text="${vehiculo.placa}"></p>
+    
+    <p>Tipo de Vehiculo:</p>
+    <p th:text="${vehiculo.tipoV}"></p>
+
+    <p>Tarifa:</p>
+    <p th:text="${vehiculo.tarifa}"></p>
+
+    <p>Minutos:</p>
+    <p th:text="${vehiculo.minutos}"></p>
+
+    <p>Piso:</p>
+    <p th:text="${vehiculo.piso.ID_Piso}"></p>
+    
+    <a th:href="@{/vehiculo/list}">Volver</a>
+</body>
+</html>
+
+
+
+
+

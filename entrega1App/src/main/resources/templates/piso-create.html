@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Piso</title>
+</head>
+<body>
+    <h1>Crear Nuevo Piso</h1>
+
+    <form th:action="@{/piso/save}" method="post">
+        <!-- Campo para la capacidad máxima -->
+        <label for="txtCapacidadMax">Capacidad Máxima:</label>
+        <input type="number" name="capacidadMax" id="txtCapacidadMax" required min="0">
+        
+        <!-- Campo para el tipo de vehículo -->
+        <label for="selectTipoVehiculo">Tipo de Vehículo:</label>
+        <select name="tipoVehiculo" id="selectTipoVehiculo" required>
+            <option value="moto">moto</option>
+            <option value="bus">bus</option>
+            <option value="automovil">automovil</option>
+        </select>
+
+        <button type="submit">Crear Piso</button>
+    </form>
+
+    <a th:href="@{/piso/list}">Volver</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehiculo list</title>
+</head>
+<body>
+    <h1>Vehiculo list</h1>
+
+    <ul>
+        <li th:each="vehiculo : ${allVehiculos}">
+            <p th:text="|Placa: ${vehiculo.placa}|"></p>
+            <p th:text="|Tipo de Vehiculo: ${vehiculo.tipoV}|"></p>
+            <p th:text="|Tarifa: ${vehiculo.tarifa}|"></p>
+            <p th:text="|Minutos: ${vehiculo.minutos}|"></p>
+            <p th:text="|Piso: ${vehiculo.piso.ID_Piso}|"></p>
+            <a th:href="@{/vehiculo/view/{idVehiculo}(idVehiculo=${vehiculo.id})}">View</a>
+        </li>
+    </ul>
+</body>
+</html>

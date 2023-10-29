@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Vehiculo</title>
+</head>
+<body>
+    <h1>Edit Vehiculo</h1>
+
+    <form th:action="@{/vehiculo/save}" method="post">
+        <input type="hidden" name="id" th:field="${vehiculo.id}">
+        
+        <label for="txtPlaca">Placa:</label>
+        <input type="text" name="placa" id="txtPlaca" th:field="${vehiculo.placa}">
+
+        <label for="txtTipoV">Tipo de Vehiculo:</label>
+        <input type="text" name="tipoV" id="txtTipoV" th:field="${vehiculo.tipoV}">
+
+        <label for="txtTarifa">Tarifa:</label>
+        <input type="text" name="tarifa" id="txtTarifa" th:field="${vehiculo.tarifa}">
+
+        <label for="txtMinutos">Minutos:</label>
+        <input type="text" name="minutos" id="txtMinutos" th:field="${vehiculo.minutos}">
+
+        <label for="txtPiso">piso:</label>
+        <input type="text" name="piso" id="txtMinutos" th:field="${vehiculo.piso.ID_Piso}">
+
+        <button>Enviar</button>
+    </form>
+</body>
+</html>

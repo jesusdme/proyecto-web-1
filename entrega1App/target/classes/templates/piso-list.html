@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Piso list</title>
+</head>
+<body>
+    <h1>Piso list</h1>
+    <a th:href="@{/piso/create}">Crear Nuevo Piso</a>
+
+    <ul>
+        <li th:each="piso : ${allPisos}">
+            <p th:text="|Piso: ${piso.ID_Piso}|"></p>
+            <p th:text="|Capacidad Máxima: ${piso.capacidadMax}|"></p>
+            <p th:text="|Tipo de Vehiculo: ${piso.tipoVehiculo}|"></p>
+            <p th:text="|Disponible: ${piso.disponible}|"></p>
+            <a th:href="@{/piso/view/{idPiso}(idPiso=${piso.ID_Piso})}">View</a>
+        </li>
+    </ul>
+</body>
+</html>
